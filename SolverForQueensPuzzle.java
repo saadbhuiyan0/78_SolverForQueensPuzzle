@@ -59,16 +59,22 @@ public class SolverForQueensPuzzle {
     private void recordSolutionsStarted() {
 
         // Which has been requested, a base case or recursive case?
-            // your code here
-            // action(s) for base case(s)
-            System.out.println( "  for debugging: base case detected for..."
+        if ( inProgress.lastIsNg()) {
+            // base case for when the board is not legal
+            System.out.println( "  for debugging: base case detected for illegal board..."
                               + System.lineSeparator()
                               + inProgress
                               );
-
+        } else if ( inProgress.accept()) {
+            // base case for when the board is legal
+            solutions.add( new BoardForQueensPuzzle( inProgress));
+            System.out.println( "  for debugging: base case detected for legal board..."
+                              + System.lineSeparator()
+                              + inProgress
+                              );
+        }
             // action for recursive cases
-            // your code here
-            System.out.println( "  for debugging: recursive case detected for..."
+            System.out.println( "  for debugging: recursive case detected for legal board..."
                               + System.lineSeparator()
                               + inProgress
                               );
