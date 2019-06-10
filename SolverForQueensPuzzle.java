@@ -57,27 +57,36 @@ public class SolverForQueensPuzzle {
          that starts -- and ends -- with that board.
      */
     private void recordSolutionsStarted() {
-
+        nBoardsConsidered++;
         // Which has been requested, a base case or recursive case?
         if ( inProgress.lastIsNg()) {
             // base case for when the board is not legal
-            System.out.println( "  for debugging: base case detected for illegal board..."
-                              + System.lineSeparator()
-                              + inProgress
-                              );
+            // System.out.println( "  for debugging: base case detected for illegal board..."
+            //                   + System.lineSeparator()
+            //                   + inProgress
+            //                   );
         } else if ( inProgress.accept()) {
             // base case for when the board is legal
             solutions.add( new BoardForQueensPuzzle( inProgress));
-            System.out.println( "  for debugging: base case detected for legal board..."
-                              + System.lineSeparator()
-                              + inProgress
-                              );
-        }
+            // System.out.println( "  for debugging: base case detected for legal board..."
+            //                   + System.lineSeparator()
+            //                   + inProgress
+            //                   );
+        } else {
             // action for recursive cases
-            System.out.println( "  for debugging: recursive case detected for legal board..."
-                              + System.lineSeparator()
-                              + inProgress
-                              );
+            for ( int file = 0;
+                  file < inProgress.ranks();
+                  file++
+            ) {
+                inProgress.populate(file);
+                recordSolutionsStarted();
+                inProgress.depopulate();
+            }
+            // System.out.println( "  for debugging: recursive case detected for legal board..."
+            //                   + System.lineSeparator()
+            //                   + inProgress
+            //                   );
+        }
     }
 
 
