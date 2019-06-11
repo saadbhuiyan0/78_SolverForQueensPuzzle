@@ -3,8 +3,7 @@
 ## Saad Bhuiyan's remarks
 
 ### citations / worked with / received help from
-I received help from Xiaoqi and Mr. Holmes since reading comments from Piazza@481 led me to discover errors in my own work and ideas to solve the issue.
-Outside of that I only relied on Piazza@479 and the README.
+I received help from Xiaoqi and Mr. Holmes since reading comments from Piazza@481 led me to discover errors in my own work and ideas to solve the issue. I also had a discussion with Eric Lau about where `nBoardsConsidered++` should be within the method. I argued it should be at the beginning of the method because `nBoardsConsidered` includes all boards not legal or legal and we decided that was correct. Outside of that I only relied on Piazza@479 and the README.
 
 ## Holmes's remarks
 
